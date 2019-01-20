@@ -11,8 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{867DF2D8-6BCA-4942-80E0-CB87A3524707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.MVC", "Portfolio.MVC\Portfolio.MVC.csproj", "{F33A7766-1BCC-45E6-A905-7FC3C2092836}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F33A7766-1BCC-45E6-A905-7FC3C2092836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33A7766-1BCC-45E6-A905-7FC3C2092836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33A7766-1BCC-45E6-A905-7FC3C2092836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33A7766-1BCC-45E6-A905-7FC3C2092836}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F33A7766-1BCC-45E6-A905-7FC3C2092836} = {55BAACE4-3277-46C9-A94D-10EE051B3736}
 	EndGlobalSection
 EndGlobal
