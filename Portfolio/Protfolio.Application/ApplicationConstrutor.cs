@@ -5,17 +5,17 @@ namespace Protfolio.Application
 {
     public class ApplicationConstrutor
     {
-        static ApplicationCliente AplicacaoCliente()
+        public static ApplicationCliente AplicacaoCliente()
         {
             return new ApplicationCliente(new RepositoryCliente());
         }
 
-        static ApplicationPedido AplicacaoPedido()
+        public static ApplicationPedido AplicacaoPedido()
         {
             return new ApplicationPedido(new RepositoryPedido());
         }
 
-        static ApplicationProduto AplicacaoProduto()
+        public static ApplicationProduto AplicacaoProduto()
         {
             return new ApplicationProduto(new RepositoryProduto());
         }

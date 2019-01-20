@@ -13,7 +13,7 @@ namespace Protfolio.Application
         private readonly IRepositoryCliente repo;
         public ApplicationCliente(IRepositoryCliente _repo)
         {
-            _repo = repo;
+            repo = _repo;
         }
         public void Add(Cliente obj)
         {
@@ -34,6 +34,11 @@ namespace Protfolio.Application
         public Cliente GetById(int id)
         {
             return repo.GetById(id);
+        }
+
+        public bool LoginValido(Cliente obj)
+        {
+            return repo.LoginValido(obj);
         }
 
         public void Remove(Cliente obj)

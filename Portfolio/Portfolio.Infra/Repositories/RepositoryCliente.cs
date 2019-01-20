@@ -14,6 +14,24 @@ namespace Portfolio.Infra.Repositories
             return Db.Clientes.Where(c => c.Nome == nome);
         }
 
+        public bool LoginValido(Cliente obj)
+        {
+            Cliente aux;
+            try
+            {
+                aux = Db.Clientes.Where(c => c.Login == obj.Login).First();
+                if (aux.Senha == obj.Senha)
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;                
+            }
+            return false;
+        }
+
         public Cliente ResgataDataCadastro(Cliente obj)
         {
             obj.DataCadastro = DateTime.Now;

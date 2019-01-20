@@ -8,5 +8,6 @@ namespace Portfolio.Domain.Interfaces
     {
         IEnumerable<Cliente> BuscarPorNome(string nome);
         Cliente ResgataDataCadastro(Cliente obj);
+        bool LoginValido(Cliente obj);
     }
 }
