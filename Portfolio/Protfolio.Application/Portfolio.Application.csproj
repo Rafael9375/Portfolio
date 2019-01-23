@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Ado\Portfolio.Ado.csproj">
+      <Project>{21896F12-FDA2-476E-9017-5CC9E3581FE5}</Project>
+      <Name>Portfolio.Ado</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Portfolio.Domain\Portfolio.Domain.csproj">
       <Project>{e914c778-ca2f-47a8-8f9b-ea79e2451926}</Project>
       <Name>Portfolio.Domain</Name>

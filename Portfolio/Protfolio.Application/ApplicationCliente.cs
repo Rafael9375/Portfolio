@@ -36,11 +36,6 @@ namespace Protfolio.Application
             return repo.GetById(id);
         }
 
-        public bool LoginValido(Cliente obj)
-        {
-            return repo.LoginValido(obj);
-        }
-
         public void Remove(Cliente obj)
         {
             repo.Remove(obj);
@@ -49,6 +44,12 @@ namespace Protfolio.Application
         public Cliente ResgataDataCadastro(Cliente obj)
         {
             return repo.ResgataDataCadastro(obj);
+        }
+
+        public void Update(Cliente obj)
+        {
+            DateTime dataCadastro = obj.DataCadastro;
+            repo.Update(obj);
         }
     }
 }

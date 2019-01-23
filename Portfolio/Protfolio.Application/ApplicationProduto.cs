@@ -2,16 +2,16 @@
 using Portfolio.Domain.Interfaces;
 using Portfolio.Infra.Repositories;
 using System.Collections.Generic;
-
+using System;
 
 namespace Protfolio.Application
 {
     public class ApplicationProduto : IRepositoryProduto
     {
-        private readonly RepositoryProduto repo;
+        private readonly IRepositoryProduto repo;
         public ApplicationProduto(IRepositoryProduto _repo)
         {
-            _repo = repo;
+            repo = _repo;
         }
         public void Add(Produto obj)
         {
@@ -33,5 +33,9 @@ namespace Protfolio.Application
             repo.Remove(obj);
         }
 
+        public void Update(Produto obj)
+        {
+            repo.Update(obj);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Portfolio.Domain.Entities;
+using Portfolio.MVC.Models;
 using Protfolio.Application;
 using System;
 using System.Collections.Generic;
@@ -8,41 +9,44 @@ using System.Web.Mvc;
 
 namespace Portfolio.MVC.Controllers
 {
-    public class ClienteController : Controller
+    public class PedidoController : Controller
     {
-        private readonly ApplicationCliente appCli;
-        public ClienteController()
+        private RelatorioPedidos relatorio;
+        private readonly ApplicationPedido appPed;
+        public PedidoController()
         {
-            appCli = ApplicationConstrutor.AplicacaoCliente();
+            appPed = ApplicationConstrutor.AplicacaoPedido();
+            relatorio = new RelatorioPedidos();
         }
-        // GET: Cliente
+        // GET: Pedido
         public ActionResult Index()
         {
-            return View(appCli.GetAll());
+            List<RelatorioPedidos> _relatorio = new List<RelatorioPedidos>();
+            _relatorio = relatorio.Conversao();
+            return View(_relatorio);
         }
 
-        // GET: Cliente/Details/5
+        // GET: Pedido/Details/5
         public ActionResult Details(int id)
         {
-            return View(appCli.GetById(id));
+            return View(appPed.GetById(id));
         }
-        [Authorize]
-        // GET: Cliente/Create
+
+        // GET: Pedido/Create
         public ActionResult Create()
         {
             return View();
         }
-        [Authorize]
-        // POST: Cliente/Create
+
+        // POST: Pedido/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Cliente cliente)
+        public ActionResult Create(Pedido pedido)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    appCli.Add(cliente);
+                    appPed.Add(pedido);
                 }
                 return RedirectToAction("Index");
             }
@@ -52,13 +56,13 @@ namespace Portfolio.MVC.Controllers
             }
         }
 
-        // GET: Cliente/Edit/5
+        // GET: Pedido/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Cliente/Edit/5
+        // POST: Pedido/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -74,13 +78,13 @@ namespace Portfolio.MVC.Controllers
             }
         }
 
-        // GET: Cliente/Delete/5
+        // GET: Pedido/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Cliente/Delete/5
+        // POST: Pedido/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -14,11 +14,11 @@ namespace Portfolio.Domain.Entities
         [DataType(DataType.EmailAddress)]
         [Display(Name ="E-mail")]
         public string Email { get; set; }
-        [Required(ErrorMessage ="Preencha o campo login.")]
-        public string Login { get; set; }
-        [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage ="A senha deve conter no minimo {0} caracteres")]
-        public string Senha { get; set; }
+        //[Required(ErrorMessage ="Preencha o campo login.")]
+        //public string Login { get; set; }
+        //[DataType(DataType.Password)]
+        //[MinLength(8, ErrorMessage ="A senha deve conter no minimo {0} caracteres")]
+        //public string Senha { get; set; }
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
         public virtual IEnumerable<Pedido> Pedidos { get; set; }

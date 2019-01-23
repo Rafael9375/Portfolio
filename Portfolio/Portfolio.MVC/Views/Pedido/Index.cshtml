@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Portfolio.MVC.Models.RelatorioPedidos>
+
+@{
+    ViewBag.Title = "Relatório de Pedidos";
+}
+
+<h2>Relatório de Pedidos</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo pedido", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PedidoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comprador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PedidoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comprador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produto)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id= item.PedidoId }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

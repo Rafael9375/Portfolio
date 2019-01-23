@@ -7,7 +7,9 @@ namespace Portfolio.Domain.Entities
     {
         [Key]
         public int PedidoId { get; set; }
+        [Display(Name ="Cliente")]
         public int ClienteId { get; set; }
+        [Display(Name = "Produto")]
         public int ProdutoId { get; set; }
         [ScaffoldColumn(false)]
         public DateTime DataPedido { get; set; }

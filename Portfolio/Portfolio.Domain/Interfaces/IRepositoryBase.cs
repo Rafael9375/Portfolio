@@ -7,6 +7,7 @@ namespace Portfolio.Domain.Interfaces
         void Add(TEntity obj);
         IEnumerable<TEntity> GetAll();
         TEntity GetById(int id);
+        void Update(TEntity obj);
         void Remove(TEntity obj);
 
     }

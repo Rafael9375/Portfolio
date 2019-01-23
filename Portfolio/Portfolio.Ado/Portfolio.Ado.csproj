@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F44684E-8751-421F-B176-95D5E4290AE6}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{21896F12-FDA2-476E-9017-5CC9E3581FE5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Portfolio.Infra</RootNamespace>
-    <AssemblyName>Portfolio.Infra</AssemblyName>
+    <RootNamespace>Portfolio.Ado</RootNamespace>
+    <AssemblyName>Portfolio.Ado</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,16 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,36 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexto\ClienteConfiguration.cs" />
-    <Compile Include="Contexto\Context.cs" />
-    <Compile Include="Contexto\PedidoConfiguration.cs" />
-    <Compile Include="Contexto\ProdutoConfiguration.cs" />
-    <Compile Include="Migrations\201901201613154_BancoCriado.cs" />
-    <Compile Include="Migrations\201901201613154_BancoCriado.Designer.cs">
-      <DependentUpon>201901201613154_BancoCriado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901221902172_LoginSenhaDrop.cs" />
-    <Compile Include="Migrations\201901221902172_LoginSenhaDrop.Designer.cs">
-      <DependentUpon>201901221902172_LoginSenhaDrop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="AdoRepositories\AdoPedidos.cs" />
+    <Compile Include="Conexao\AdoConexao.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\RepositoryBase.cs" />
-    <Compile Include="Repositories\RepositoryCliente.cs" />
-    <Compile Include="Repositories\RepositoryPedido.cs" />
-    <Compile Include="Repositories\RepositoryProduto.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901201613154_BancoCriado.resx">
-      <DependentUpon>201901201613154_BancoCriado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901221902172_LoginSenhaDrop.resx">
-      <DependentUpon>201901221902172_LoginSenhaDrop.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Portfolio.Domain\Portfolio.Domain.csproj">

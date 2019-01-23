@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Portfolio.Domain.Interfaces;
 using Portfolio.Infra.Contexto;
 using System.Linq;
+using System.Data.Entity;
 
 namespace Portfolio.Infra.Repositories
 {
@@ -30,6 +31,12 @@ namespace Portfolio.Infra.Repositories
         public void Remove(TEntity obj)
         {
             Db.Set<TEntity>().Remove(obj);
+            Db.SaveChanges();
+        }
+
+        public void Update(TEntity obj)
+        {
+            Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
         }
     }

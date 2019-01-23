@@ -8,41 +8,40 @@ using System.Web.Mvc;
 
 namespace Portfolio.MVC.Controllers
 {
-    public class ClienteController : Controller
+    public class ProdutoController : Controller
     {
-        private readonly ApplicationCliente appCli;
-        public ClienteController()
+        private readonly ApplicationProduto appPro;
+        public ProdutoController()
         {
-            appCli = ApplicationConstrutor.AplicacaoCliente();
+            appPro = ApplicationConstrutor.AplicacaoProduto();
         }
-        // GET: Cliente
+        // GET: Produto
         public ActionResult Index()
         {
-            return View(appCli.GetAll());
+            return View(appPro.GetAll());
         }
 
-        // GET: Cliente/Details/5
+        // GET: Produto/Details/5
         public ActionResult Details(int id)
         {
-            return View(appCli.GetById(id));
+            return View(appPro.GetById(id));
         }
-        [Authorize]
-        // GET: Cliente/Create
+
+        // GET: Produto/Create
         public ActionResult Create()
         {
             return View();
         }
-        [Authorize]
-        // POST: Cliente/Create
+
+        // POST: Produto/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Cliente cliente)
+        public ActionResult Create(Produto produto)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    appCli.Add(cliente);
+                    appPro.Add(produto);
                 }
                 return RedirectToAction("Index");
             }
@@ -52,13 +51,13 @@ namespace Portfolio.MVC.Controllers
             }
         }
 
-        // GET: Cliente/Edit/5
+        // GET: Produto/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Cliente/Edit/5
+        // POST: Produto/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -74,13 +73,13 @@ namespace Portfolio.MVC.Controllers
             }
         }
 
-        // GET: Cliente/Delete/5
+        // GET: Produto/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Cliente/Delete/5
+        // POST: Produto/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
